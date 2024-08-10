@@ -3,6 +3,10 @@
 -- Add any additional keymaps here
 local map = LazyVim.safe_keymap_set
 
+-- Move highlighted lines up/down
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+
 -- quit insert mode
 map("i", "jj", "<Esc>", { desc = "quit insert mode" })
 map("i", "jk", "<Esc>", { desc = "quit insert mode" })
