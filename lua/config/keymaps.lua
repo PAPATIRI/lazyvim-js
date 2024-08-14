@@ -11,6 +11,11 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("i", "jj", "<Esc>", { desc = "quit insert mode" })
 map("i", "jk", "<Esc>", { desc = "quit insert mode" })
 
+-- buffer management
+-- vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
+-- vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+-- vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
+
 -- Set default terminal to PowerShell
 require("lazyvim.util.terminal").setup("pwsh")
 
