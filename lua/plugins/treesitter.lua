@@ -75,7 +75,7 @@ return {
           -- 'src/scanner.cc',
         },
         branch = "main",
-        generate_requires_npm = true,
+        generate_requires_npm = false,
         requires_generate_from_grammar = true,
       },
       filetype = "blade",

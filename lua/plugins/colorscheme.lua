@@ -1,7 +1,7 @@
 return {
   {
     "catppuccin/nvim",
-    lazy = true,
+    lazy = false,
     name = "catppuccin",
     opts = {
       integrations = {
@@ -43,38 +43,16 @@ return {
     },
   },
   {
-    "AlexvZyl/nordic.nvim",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      require("nordic").setup({
-        -- Disable italic for comments and other elements
-        italic = false,
-        -- Override specific highlight groups
-        override = {
-          MiniIndentscopeSymbol = {
-            fg = "#4C566A", -- Adjust color as needed
-            italic = false,
-          },
-          EndOfBuffer = { fg = "bg" },
-        },
-      })
-      vim.cmd.colorscheme("nordic")
-
-      -- Ensure MiniIndentscopeSymbol is not italic after colorscheme is applied
-      vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "nordic",
-        callback = function()
-          vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = "#4C566A", italic = false })
-          vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg })
-        end,
-      })
-    end,
+    opts = {},
   },
+  { "rose-pine/neovim", name = "rose-pine", lazy = false, priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nordic",
+      colorscheme = "rose-pine",
     },
   },
 }
