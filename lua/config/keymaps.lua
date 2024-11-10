@@ -45,18 +45,3 @@ elseif type(terminal_config) == "table" then
 else
   vim.notify("Invalid terminal configuration", vim.log.levels.ERROR)
 end
-
--- floating terminal
-local lazyterm = function()
-  LazyVim.terminal(nil, {
-    cwd = LazyVim.root(),
-    size = { width = 0.7, height = 0.7 },
-  })
-end
-
-map("n", "<leader>ft", lazyterm, { desc = "Terminal (Root Dir)" })
-map("n", "<leader>fT", function()
-  LazyVim.terminal()
-end, { desc = "Terminal (cwd)" })
-map("n", "<c-/>", lazyterm, { desc = "Terminal (Root Dir)" })
-map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
