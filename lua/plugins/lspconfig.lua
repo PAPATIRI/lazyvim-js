@@ -1,8 +1,5 @@
 return {
   {
-    "jwalton512/vim-blade",
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
@@ -16,7 +13,6 @@ return {
             "scss",
             "less",
             "vue",
-            "blade",
             "svelte",
           },
         },
